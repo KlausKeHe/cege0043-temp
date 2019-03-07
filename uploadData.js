@@ -13,6 +13,15 @@ function startDataUpload(){
 	checkString = checkString + document.getElementById("check"+i).value + "||"}}
 	postString = postString +"&modulelist="+checkString;
 	// now get the radio button values
+	if (document.getElementById("morning").checked){
+	postString = postString + "&lecturetime=morning";}
+	if (document.getElementById("afternoon").checked){
+	postString = postString + "&lecturetime=afternoon";}
+	
+	// now get the select box values
+	var language = document.getElementById("languageselectbox").value;
+	postString = postString + "&language="+language;
+
 }
 
 var client; // the global variable that holds the request
