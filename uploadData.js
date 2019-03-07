@@ -6,6 +6,13 @@ function startDataUpload(){
 	var postString = "name="+name +"&surname="+surname+"&module="+module;
 	alert (postString);
 	processData(postString);
+	// now get th e checkedbox values - separate them with a I sothat they can be splt later on if necessary
+	var checkString = ""
+	for (var i = 1;i<5;i++){
+		if (document.getElementById("check"+i).checked === true){
+	checkString = checkString + document.getElementById("check"+i).value + "||"}}
+	postString = postString +"&modulelist="+checkString;
+	// now get the radio button values
 }
 
 var client; // the global variable that holds the request
